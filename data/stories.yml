@@ -1,0 +1,108 @@
+version: "3.1"
+
+stories:
+
+# Starting phase of bot(Greet)
+- story: welcome path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_select_country
+
+# Conversation flow when country - India
+- story: india country
+  steps:
+  - intent: india_country
+  - action: utter_india
+  - action: utter_solutions
+  - intent: solutions
+  - action: utter_name
+
+# Conversation flow when country - Australia
+- story: australia country
+  steps:
+  - intent: australia_country
+  - action: utter_australia
+  - action: utter_solutions
+  - intent: solutions
+  - action: utter_name
+#  - action: utter_ending
+
+# Conversation flow when country - Singapore
+- story: singapore country
+  steps:
+  - intent: singapore_country
+  - action: utter_singapore
+  - action: utter_solutions
+  - intent: solutions
+  - action: utter_name
+#  - action: utter_ending
+
+# Conversation flow when country - USA
+- story: USA country
+  steps:
+  - intent: United_States_country
+  - action: utter_usa
+  - action: utter_solutions
+  - intent: solutions
+  - action: utter_name
+#  - action: utter_ending
+
+# Conversation flow when country - UAE
+- story: UAE country
+  steps:
+  - intent: United_Arab_Emirates_country
+  - action: utter_uae
+  - action: utter_solutions
+  - intent: solutions
+  - action: utter_name
+#  - action: utter_ending
+
+# Conversation flow when country - UK
+- story: UK country
+  steps:
+  - intent: United_Kingdom_country
+  - action: utter_uk
+  - action: utter_solutions
+  - intent: solutions
+  - action: utter_name
+
+
+# Conversation flow when country - HK
+- story: HK country
+  steps:
+  - intent: Hong_Kong_country
+  - action: utter_hk
+  - action: utter_solutions
+  - intent: solutions
+  - action: utter_name
+
+- story: path for other services
+  steps:
+  - intent: anyother
+  - action: utter_name
+#  - action: utter_solutions
+#  - intent: solutions
+#  - action: utter_name
+- story: happy path with name, contact, and query
+  steps:
+  - intent: inform
+    entities:
+    - name: "John"
+  - action: action_handle_user_details
+  - intent: inform
+    entities:
+    - email: "alice@example.com"
+  - action: action_handle_user_details
+
+- story: happy path with name, email, and query part 2
+  steps:
+  - intent: inform
+    entities:
+    - contact: "9876543210"
+  - action: action_handle_user_details
+  - intent: user_queries
+    entities:
+    - query: "How can you help me?"
+  - action: action_handle_user_details
+  - action: action_store_params_in_csv

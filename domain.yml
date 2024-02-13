@@ -1,0 +1,179 @@
+version: "3.1"
+
+intents:
+  - greet
+  - india_country
+  - singapore_country
+  - australia_country
+  - inform
+  #  - write_csv
+  #  - user_email
+  #  - user_contact
+  - user_queries
+  - United_States_country
+  - United_Kingdom_country
+  - United_Arab_Emirates_country
+  - Hong_Kong_country
+  - anyother
+  - solutions
+#  - confirm_yes
+
+
+responses:
+  utter_greet:
+    - text: "Hi there !  "
+
+  # Our Countries
+  utter_select_country:
+    - text: "Please choose your country :"
+      buttons:
+        - title: India
+          payload: "/india_country"
+        - title: Australia
+          payload: "/australia_country"
+        - title: Hong Kong
+          payload: "/Hong_Kong_country"
+        - title: Singapore
+          payload: "/singapore_country"
+        - title: United Arab Emirates
+          payload: "/United_Arab_Emirates_country"
+        - title: United Kingdom
+          payload: "/United_Kingdom_country"
+        - title: United States
+          payload: "/United_States_country"
+
+  # Country Wise Company Names
+  utter_india:
+    - text: "Welcome to VCARE InfoTech Solutions & Services Pvt Ltd"
+  utter_australia:
+    - text: "Welcome to NewGen IT Solutions and Services Pty Ltd"
+  utter_singapore:
+    - text: "Welcome to NewGen IT Solutions and Services Pte Ltd."
+  utter_uae:
+    - text: "Welcome to NewGen IT Solutions and Services"
+  utter_usa:
+    - text: "Welcome to VCARE Technologies Inc"
+  utter_uk:
+    - text: "Welcome to NewGen IT Solutions and Services Limited"
+  utter_hk:
+    - text: "Welcome to VCARE Technologies Pvt Ltd."
+
+  # Services
+  utter_solutions:
+    - text: "We are providing these categories:"
+      buttons:
+        - title: "IT Infrastructure Solution"
+          payload: "/solutions"
+        - title: "Software Development & Consulting"
+          payload: "/solutions"
+        - title: "Data Center solution"
+          payload: "/solutions"
+        - title: "Application Services"
+          payload: "/solutions"
+        - title: "Cyber Security Solutions"
+          payload: "/solutions"
+        - title: "Cloud Services"
+          payload: "/solutions"
+        - title: "Any Other"
+          payload: "/anyother"
+
+  utter_name:
+    - text: "What's your Name?"
+  #  utter_email:
+  #    - text: "What's your Email ID?"
+  #  utter_contact:
+  #    - text: "What's your Contact Number?"
+  #  utter_queries:
+  #    - text: "What's your Query?"
+  #  utter_ask_for_confirmation:
+  #    - text: "Is this information correct: \n Name - {name},\n Email - {email},\n Contact - {contact}, \n Query- {query}"
+
+  utter_ending:
+    - text: "Thank You {name} for your response. Our Team Representative will contact you ASAP "
+
+
+
+entities:
+  - name
+  - email
+  - contact
+  - query
+  - country
+  - name_filled
+  - email_filled
+  - PERSON
+  - ORG
+  - GPE
+  - CARDINAL
+  - NORP
+
+slots:
+  name:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: name
+  email:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: email
+  contact:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: contact
+  query:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: query
+  country:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: country
+  name_filled:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: name_filled
+  email_filled:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: email_filled
+  contact_filled:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: contact_filled
+
+
+forms:
+  user_detail_form:
+    required_slots:
+      - name
+      - email
+      - contact
+      - query
+      - country
+
+session_config:
+  session_expiration_time: 60 # Time in minutes
+  carry_over_slots_to_new_session: true
+
+
+actions:
+  #-  action_fetch_params
+  - action_store_params_in_csv
+  - action_handle_user_details
+  - action_session_start

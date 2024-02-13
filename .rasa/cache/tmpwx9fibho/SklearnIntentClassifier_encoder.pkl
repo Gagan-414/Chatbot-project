@@ -1,0 +1,1 @@
+{"py/object": "numpy.ndarray", "dtype": "<U28", "values": ["Hong_Kong_country", "United_Arab_Emirates_country", "United_Kingdom_country", "United_States_country", "anyother", "australia_country", "greet", "india_country", "inform", "singapore_country", "solutions", "user_queries"]}

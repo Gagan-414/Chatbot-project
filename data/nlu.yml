@@ -1,0 +1,142 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: india_country
+  examples: |
+    - 1: India
+    - INDIA
+    - India
+    - india
+
+- intent: singapore_country
+  examples: |
+    - 4: Singapore
+    - SINGAPORE
+    - singapore
+    - Singapore
+
+- intent: australia_country
+  examples: |
+    - 2: Australia
+    - AUSTRALIA
+    - australia
+    - Australia
+
+- intent: United_States_country
+  examples: |
+    - 7: United States
+    - United States
+    - United States
+    - US
+    - us
+    - UNITED STATES OF AMERICA
+    - united states Of america
+    - America
+    - AMERICA
+    - america
+
+- intent: United_Kingdom_country
+  examples: |
+    - 6: United Kingdom
+    - United Kingdom
+    - united kingdom
+    - UK
+    - uk
+
+- intent: United_Arab_Emirates_country
+  examples: |
+    - 5: United Arab Emirates
+    - United Arab Emirates
+    - united arab emirates
+    - UAE
+    - uae
+
+- intent: Hong_Kong_country
+  examples: |
+    - 3: Hong Kong
+    - HONG KONG
+    - Hong Kong
+    - HK
+    - hk
+
+
+- intent: anyother
+  examples: |
+    - Any Other
+    
+
+- intent: solutions
+  examples: |
+    - IT Infrastructure Solution
+    - Software Development & Consulting
+    - Data Center solution
+    - Application Services
+    - Cyber Security Solutions
+    - Cloud Services
+
+- intent: inform
+  examples: |
+      - my name is [Rudra Saraswat](name)
+      - [Rudra Saraswat](name)
+      - [Rudra](name)
+      - [Lucifer](name)
+      - [Richard](name)
+      - [User demo](name)
+      - [firstname surname](name)
+      - [gagan gupta](name)
+      - [akash](name)
+      - [rudrasaraswat001@gmail.com](email)
+      - [abc@gmail.com](email)
+      - [abc@yourdomain](email)
+      - [@gmail.com](email)
+      - [@yahoo.in](email)
+      - [xyz@gmail.com](email)
+      - [+91 6396222891 ](contact)
+      - [6396222891](contact) 
+
+- intent: user_queries
+  examples: |
+     - [no queries till now, i am just checking the conversation flow of the bot topic](query)
+     - [Google, Amazon,Microsoft](query)
+     - [Type a message and press enter topic](query)
+     - [Task was destroyed but it is pending! topic](query)
+     - [Bot loaded. Type a message and press enter (use '/stop' to exit) topic](query)
+     - [The UnexpecTED Intent Policy is currently topic](query)
+     - [I have a long query about topic](query)
+     - [Can you help me with a detailed question about subject](query)
+     - [I need assistance with a complex issue regarding topic](query)
+     - I want to know about [climate change]
+     - Can you help me with [booking a ticket]
+     - Tell me more about [Rasa]
+     - I need information on [local events]
+     - How do I [bake a cake]
+     - What is the meaning of [life]
+     - Where can I find [Italian restaurants]
+     - Who is [Elon Musk]
+     - When is [the next solar eclipse]
+     - I want to know about [topic]
+     - Can you help me with [issue]
+     - Tell me more about [subject]
+     - I need information on [topic]
+     - [topic]
+     - How do I [perform some action]
+     - What is the meaning of [term]
+     - Where can I find [item or place]
+     - Who is [person]
+     - When is [event or date]
